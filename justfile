@@ -216,3 +216,9 @@ move-generate:
     scripts/gen_serve_handler_ledger.py
     scripts/gen_plugin_api_docs.py
     scripts/gen_gateway_command_parity.py --check
+
+# Rewrite moved paths and module names in docs and comments (--from-commit A; --help lists the rest)
+[group('move')]
+[positional-arguments]
+move-docs *args:
+    scripts/hermes-python scripts/move/rewrite_docs.py "$@"
